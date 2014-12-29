@@ -1,0 +1,52 @@
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>jQuery Mobile Bootstrap Theme</title>
+		<link rel="stylesheet" href="themes/Bootstrap.css">
+		<link rel="stylesheet" href="themes/ac.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="themes/ab.js"></script>
+		<script src="themes/as.js"></script>
+	</head>
+	<body>
+		<div data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<h1>jQuery Mobile Bootstrap Theme</h1>
+				<div data-role="navbar">
+					<ul>
+						<li><a onclick="loca('index')" data-icon="home">Home</a></li>
+						<li><a onclick="loca('listviews')" data-icon="grid">Lists</a></li>
+						<li><a onclick="loca('forms')" data-icon="refresh" class="ui-btn-active">Retake</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content" data-theme="a" id="abc">
+
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+
+	var tests = JSON.parse(localStorage["testaa"]);
+
+	for(i in tests){
+        
+        $( "#abc" ).append(
+    		'<a href="index.html" data-role="button" data-theme="e" data-icon="" onclick="getTest('+tests[i].test+')" >Test '+tests[i].test+' ('+tests[i].ques.length+' questions)</a>'
+        );
+        
+    }
+
+    function getTest(test){
+        localStorage.setItem("cur_test", test);
+        window.location.assign("forms.html")
+    }
+
+	function loca(loca){
+		window.location.assign(loca+".html")
+	}
+</script>

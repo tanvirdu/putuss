@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>jQuery Mobile Bootstrap Theme</title>
+		<link rel="stylesheet" href="themes/Bootstrap.css">
+		<link rel="stylesheet" href="themes/ac.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="themes/ab.js"></script>
+		<script src="themes/as.js"></script>
+	</head>
+	<body>
+		<div data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<h1>jQuery Mobile Bootstrap Theme</h1>
+				<div data-role="navbar">
+					<ul>
+						<li><a onclick="loca('index')" data-icon="home">Home</a></li>
+						<li><a onclick="loca('listviews')" data-icon="grid">Lists</a></li>
+						<li><a onclick="loca('forms')" data-icon="refresh" class="ui-btn-active">Retake</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div data-role="content" data-theme="a">
+
+				<ul data-role="listview" data-inset="true" data-divider-theme="a">
+					<a href="listviews.html" data-role="button" data-theme="a" data-icon="star">Model Tests</a>
+				</ul>
+
+			</div>
+		</div>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+
+if (navigator.onLine) {
+    //check if update 
+    	//take update and set local storage
+    //else nothing
+} else {
+	//nothing
+}
+
+
+function loca(loca){
+	window.location.assign(loca+".html")
+}
+
+if(localStorage["installed"] !== 'yes'){
+
+var testaa = [ {"test":"1", "subject":"sub_1", "ques": [{ "q":"John11" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John2" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John3" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John4" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John5" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John6" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John7" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John8" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John9" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" }]}, 
+
+{"test":"2", "subject":"sub_2", "ques": [{ "q":"John21" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John2" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John3" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John4" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John5" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John6" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John7" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John8" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John9" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" }]}, 
+
+{"test":"3", "subject":"sub_3", "ques": [{ "q":"John31" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John2" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John3" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John4" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John5" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John6" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John7" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John8" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John9" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" }]},
+
+{"test":"4", "subject":"sub_4", "ques": [{ "q":"John41" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John2" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John3" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John4" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John5" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John6" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John7" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John8" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John9" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" }]}, 
+
+{"test":"5", "subject":"sub_5", "ques": [{ "q":"John51" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John2" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John3" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John4" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John5" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John6" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John7" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John8" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" },{ "q":"John9" , "a":"AA" , "b":"BB" , "c":"CC" , "d":"DD" , "cor":"a" }]}];
+
+	localStorage.setItem("tests", tests);
+	localStorage.setItem("testaa", JSON.stringify(testaa));
+	localStorage.setItem("installed", "yes");
+
+}
+
+</script>
+
+
+
+
+

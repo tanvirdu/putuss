@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>jQuery Mobile Bootstrap Theme</title>
+		<link rel="stylesheet" href="themes/Bootstrap.css">
+		<link rel="stylesheet" href="themes/ac.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="themes/ab.js"></script>
+		<script src="themes/as.js"></script>
+	</head>
+	<body>
+		<div data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<h1>jQuery Mobile Bootstrap Theme</h1>
+				<div data-role="navbar">
+					<ul>
+						<li><a onclick="loca('index')" data-icon="home">Home</a></li>
+						<li><a onclick="loca('listviews')" data-icon="grid">Lists</a></li>
+						<li><a onclick="loca('forms')" data-icon="refresh" class="ui-btn-active">Retake</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content" data-theme="a">
+
+				<h2>Correct: <span id="cor"></span></h2>
+				<h2>Incorrect: <span id="incor"></span></h2>
+				<h2>Unanswered: <span id="unans"></span></h2>
+
+				<form action="#" method="get">
+
+					<div data-role="fieldcontain" id="abc">
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+
+	var tests = JSON.parse(localStorage["testaa"]);
+	var rest = localStorage["result"];
+	var res = JSON.parse(rest);
+	var cur = localStorage["cur_test"];
+	var test = tests[cur].ques;
+	var as = '';
+	var bs = '';
+	var you = '';
+	var cor = '';
+	var cor_n = 0;
+	var incor_n = 0;
+	var no_ans = 0;
+	for(i in test){
+		as = res[i].value;
+    	bs = test[i].cor;
+    	
+    	if(as == 'a'){
+    		you = test[i].a;
+    	} else if(as == 'b'){
+    		you = test[i].b;
+    	}  else if(as == 'c'){
+    		you = test[i].c;
+    	}  else if(as == 'd'){
+    		you = test[i].d;
+    	} 
+    	
+    	if(bs == 'a'){
+    		cor = test[i].a;
+    	} else if(bs == 'b'){
+    		cor = test[i].b;
+    	}  else if(bs == 'c'){
+    		cor = test[i].c;
+    	}  else if(bs == 'd'){
+    		cor = test[i].d;
+    	} 
+
+    	if(as == bs){
+	        $( "#abc" ).append(
+	        	'<ul data-role="listview" data-inset="true" data-divider-theme="d" >'+
+					'<li data-role="list-divider">'+test[i].q+'</li>'+
+					'<li data-icon="check"><a href=""> Your Answer / Correct Answer: '+cor+'</a></li>'+
+				'</ul>'
+	        );
+	        cor_n++;
+    	} else {
+    		if(as == 0){
+	    		$( "#abc" ).append(
+		        	'<ul data-role="listview" data-inset="true" data-divider-theme="e" >'+
+						'<li data-role="list-divider">'+test[i].q+'</li>'+
+						'<li data-icon="alert"><a href=""> Correct Answer: '+cor+'</a></li>'+
+					'</ul>'
+		        );
+	    		no_ans++;
+	        } else {
+	    		$( "#abc" ).append(
+		        	'<ul data-role="listview" data-inset="true" data-divider-theme="c" >'+
+						'<li data-role="list-divider">'+test[i].q+'</li>'+
+						'<li data-icon="delete"><a href=""> Your Answer: '+you+' / Correct Answer: '+cor+'</a></li>'+
+					'</ul>'
+		        );
+	        	incor_n++;
+	   		}
+    	}
+    	document.getElementById('unans').innerHTML = no_ans;
+    	document.getElementById('cor').innerHTML = cor_n;
+    	document.getElementById('incor').innerHTML = incor_n;
+    	localStorage.setItem("result", '');
+    }
+
+	function loca(loca){
+		window.location.assign(loca+".html")
+	}
+
+</script>
+
+
+
+

@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>jQuery Mobile Bootstrap Theme</title>
+		<link rel="stylesheet" href="themes/Bootstrap.css">
+		<link rel="stylesheet" href="themes/ac.css" />
+		<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+		<script src="themes/ab.js"></script>
+		<script src="themes/as.js"></script>
+	</head>
+	<body>
+		<div data-role="page" data-theme="a">
+			<div data-role="header" data-position="inline">
+				<h1>jQuery Mobile Bootstrap Theme</h1>
+				<div data-role="navbar">
+					<ul>
+						<li><a onclick="loca('index')" data-icon="home">Home</a></li>
+						<li><a onclick="loca('forms')" data-icon="refresh">Retake</a></li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="content" data-theme="a">
+
+				<h2>Forms</h2>
+
+				<form action="#" method="get">
+
+					<div data-role="fieldcontain" id="abc">
+					</div>
+
+					<div class="ui-body ui-body-b">
+						<fieldset class="ui-grid-a">
+							<div class="ui-block-a"><button data-theme="d">Cancel</button></div>
+							<div class="ui-block-b"><a data-theme="a" onclick="submitit()">Submit</a></div>
+					    </fieldset>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</body>
+</html>
+
+
+<script type="text/javascript">
+
+	var tests = JSON.parse(localStorage["testaa"]);
+	var cur = localStorage["cur_test"]-1;
+	var test = tests[cur].ques;
+
+	for(i in test){
+        
+        $( "#abc" ).append(
+        	'<div data-role="fieldcontain" >'
+        	+'<fieldset data-role="controlgroup">'
+		    +'	<legend>'+test[i].q+'</legend>'
+			+'	<input type="radio" name="'+i+'" id="radio-choice-1" value="a" />'
+			+'	<label for="radio-choice-1">(A) '+test[i].a+'</label>'
+			+''
+			+'	<input type="radio" name="'+i+'" id="radio-choice-2" value="b"  />'
+			+'	<label for="radio-choice-2">(B) '+test[i].b+'</label>'
+			+''
+			+'	<input type="radio" name="'+i+'" id="radio-choice-3" value="c"  />'
+			+'	<label for="radio-choice-3">(C) '+test[i].c+'</label>'
+			+''
+			+'	<input type="radio" name="'+i+'" id="radio-choice-4" value="d" />'
+			+'	<label for="radio-choice-4">(D) '+test[i].d+'</label>'
+			+''
+			+'	<div style="display:none">'
+			+'	<input type="radio" name="'+i+'" id="radio-choice-5" value="0" checked="checked" />'
+			+'	</div>'
+		    +'</fieldset>'
+		    +'</div>'
+        );
+
+    }
+
+	 function submitit(){
+		var res = JSON.stringify($('form').serializeArray());
+        localStorage.setItem("result", res);
+        loca('result');
+	}
+	function loca(loca){
+		window.location.assign(loca+".html")
+	}
+
+</script>
+
+
+
+
